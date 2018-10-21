@@ -94,17 +94,21 @@ def formatData(tags):
 #dictionary key: string name of the gift value: list of attribute
 gifts = {"basketball" : ['basketball', 'athletic', 'basketball', 'athlete', 'exercise', 'teenager', 'teenage', 'health', 'train'], 'photo album': ['photo', 'photography', 'anniversary', 'collection', 'family', 'friend'], 'bike' : ['travel', 'nature', 'sport', 'lifestyle', 'utility', 'transport'], 'tent' : ['nature', 'hike', 'adventure', 'activity', 'travel', 'event'], 'palette' : ['artistic', 'creation', 'personal', 'paint', 'draw', 'picture'], 'sheet music' : ['pianist', 'music', 'instrument', 'creative', 'art', 'perform']}
 person1 = ['athletic', 'sport', 'basketball', 'rock', 'band', 'football', 'baseball', 'healthy', 'game', 'teenager']
-#scores of each gift
-scores = {}
-formatData(person1)
 
-for gift in gifts:
-    tags = gifts[gift]
-    formatData(tags)
-    score = computeGiftScore(person1, tags) * 10
-    scores[gift] = score
-    #sort the dictionary
-    sortedScores = [(k, scores[k]) for k in sorted(scores, key=scores.get, reverse=True)]
-print(sortedScores)
+def main(personInfo, gifts):
+    #scores of each gift
+    scores = {}
+    formatData(person1)
 
+    for gift in gifts:
+        tags = gifts[gift]
+        formatData(tags)
+        score = computeGiftScore(person1, tags) * 10
+        scores[gift] = score
+        #sort the dictionary
+        sortedScores = [(k, scores[k]) for k in sorted(scores, key=scores.get, reverse=True)]
+    return sortedScores
+
+result = main(person1, gifts)
+print(result)
     
