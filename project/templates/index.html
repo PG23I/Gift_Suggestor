@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    Welcome! Let's get started. Use the last text box to enter a comma separated list of values which describes the interests of the person.
+    <form action="/index" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="price_min" placeholder="Minimum Price (USD)" type="number"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="price_max" placeholder="Maximum Price (USD)" type="number"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="age" placeholder="Age (in Years)" type="number"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="giftee_attributes" placeholder="Enter a list of words" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Get Ideas!</button>
+    </form>
+{% endblock %}

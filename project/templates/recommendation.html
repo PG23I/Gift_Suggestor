@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recommendation
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped" style="width:100%">
+
+        <tr>
+
+            <th>Product ID</th>
+
+            <th>Name</th>
+
+            <th>Price</th>
+
+            <th>Amazon URL</th>
+
+        </tr>
+
+        {% for gift in gifts %}
+
+        <tr>
+
+            <td>{{gifts.product_id}}</td>
+
+            <td>{{gifts.name}}</td>
+
+            <td>{{gifts.price}}</td>
+
+            <td>{{gifts.Amazon_URL}}</td>
+
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    </div>
+
+{% endblock %}
